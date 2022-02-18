@@ -6,6 +6,10 @@ ENV MC_VERSION="latest" \
     PAPER_BUILD="latest" \
     MC_RAM="" \
     JAVA_OPTS=""
+	
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get clean;
 
 COPY papermc.sh .
 RUN apt-get update \
